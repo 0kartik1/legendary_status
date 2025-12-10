@@ -9,11 +9,19 @@ def log_keeper(function):
         return ans
     return arg_logger
 
+def testing_deco(func):
+    def just_a_wrapper(*args,**kwargs):
+        func()
+    return just_a_wrapper
+
 @log_keeper
 def adding_func(*args):
     sum = 0
     for num in args:
         sum += num
     return sum
+
+# decorator stacking
+
 
 print(adding_func(10,20,30,40))
