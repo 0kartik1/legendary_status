@@ -4,16 +4,20 @@ class top:
     def find_mro(self):
         print('Ultimate class')
 
+class A1(top):
+    def find_mro(self):
+        print('Class A1')
+
 class A(top):
     var_a = 'a'
     def find_mro(self):
         print('Class A')
 
-class B(A):
+class B(A,A1):
     def find_mro(self):
         print('Class B')
 
-class C(A):
+class C(A,A1):
     def find_mro(self):
         print('Class C')
 
